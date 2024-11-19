@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Food Delievery App</title>
+</head>
+<body>
+    <!--sidebar-->
+    <div class="sidebar">
+        <!--logo-->
+        <h1 class="logo">Skyites</h1>
+        <!--list of menus-->
+        <div class="sidebar-menus">
+            <a href="#"><ion-icon name = "storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name = "receipt-outline"></ion-icon>Bills</a>
+            <a href="#"><ion-icon name = "wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name = "notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name = "chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name = "settings-outline"></ion-icon>Settings</a>
+        </div>
+        <!--logout-->
+        <div class ="sidebar-logout">
+            <a href="#"><ion-icon name="log-out-outline"></ion-icon>LogOut</a>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <div class="search">
+                <input type="text" placeholder="Try your favourite">
+                <button class="search-btn">Search</button>
+            </div>
+            <!--profile icon of left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" onclick="toggleCartPopup">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+            </div>
+        </div>
+
+        <!--shopping cart section-->
+        <div id="cart-popup" class="cart-popup">
+            <h4>Shopping Cart</h4>
+            <table id="cart-items">
+                <thead>
+                    <tr>
+                        <th>Items</th>
+                        <th>#</th>
+                        <th>Price(₹)</th>
+                        <th>Total(₹)</th>
+                    </tr>
+                </thead>
+            </table>
+            <p>Total(₹)<span id="cart-total">0</span></p>
+            <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
+        </div>
+
+
+        <!--main highlights-->
+        <div class="main-highlight">
+            <!--title section and arrow-->
+            <div class="main-header">
+                <h2 class="main-title">Recommendations</h2>
+                <div class="main-arrow">
+                    <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+                </div>
+            </div>
+            <!--highlight menu-->
+            <div class="highlight-wrapper">
+                <div class="highlight-card">
+                    <img class="highlight-img" src="Chocolate Truffle Layer Cake Recipe.jpg">
+                    <div class="highlight-desc">
+                        <h4>Chocolate Cake</h4>
+                        <p>₹120</p>
+                    </div>
+                </div>
+                <div class="highlight-card"> 
+                    <img class="highlight-img" src="Holiday Spiced Café Au Lait - The Local Palate.jpg">
+                    <div class="highlight-desc">
+                        <h4>Cafe Latte</h4>
+                        <p>₹85</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img class="highlight-img" src="Chicken Biryani _ Handi Biryani _ Kolkata Style Biryani.jpg">
+                    <div class="highlight-desc">
+                        <h4>Chicken Biriyani</h4>
+                        <p>₹200</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img class="highlight-img" src="Pizza Burger Recipe.jpg">
+                    <div class="highlight-desc">
+                        <h4>Burger</h4>
+                        <p>₹170</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--main menus/order-->
+        <div class="main-menus">
+            <!--filter section-->
+            <div class="main-filter">
+                <div>
+                    <h2 class="main-title">Menu <br>Category</h2>
+                    <div class="main-arrow">
+                        <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+                        <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="filter-wrapper">
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="restaurant-outline"></ion-icon>
+                        </div>
+                        <p>All Menus</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="fast-food-outline"></ion-icon>
+                        </div>
+                        <p>Burger</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="Pizza-outline"></ion-icon>
+                        </div>
+                        <p>Pizza</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="fish-outline"></ion-icon>
+                        </div>
+                        <p>Seafood</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="ice-cream-outline"></ion-icon>
+                        </div>
+                        <p>Ice Cream</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="cafe-outline"></ion-icon>
+                        </div>
+                        <p>Cafe Latte</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="nutrition-outline"></ion-icon>
+                        </div>
+                        <p>Healthy</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name="wine-outline"></ion-icon>
+                        </div>
+                        <p>Juices</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider">
+            <!--list of foods-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="How to Make Delicious Cajun Honey Butter Salmon.jpg" >
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Butter Salmon</h4>
+                                <p class="detail-sub">Fresh, flavorful salmon packed with omega-3s, delivered straight to your door!</p>
+                                <p class="price">₹250</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="Premium Photo _ Pizza with mushrooms and cheese on a black background Italian food.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Pizza</h4>
+                                <p class="detail-sub">Hot, cheesy pizza, loaded with your favorite toppings</p>
+                                <p class="price">₹230</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="Pizza Burger Recipe.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Burger</h4>
+                                <p class="detail-sub">Juicy, flavorful Burger with a perfect bite of deliciousness in every bite!</p>
+                                <p class="price">₹170</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="Chicken Biryani _ Handi Biryani _ Kolkata Style Biryani.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Biriyani</h4>
+                                <p class="detail-sub">Our biryani offers a perfect blend of tender meat and flavorful rice</p>
+                                <p class="price">₹199</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="Chocolate Truffle Layer Cake Recipe.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Chocolate Truffle Cake</h4>
+                                <p class="detail-sub">This chocolate truffle cake is a treat with layers of velvety chocolate ganache</p>
+                                <p class="price">₹95</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="WhatsApp Image 2024-11-19 at 3.51.43 PM.jpeg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Apple Juice</h4>
+                                <p class="detail-sub">Refreshing apple juice is made from the finest apples for a crisp!</p>
+                                <p class="price">₹75</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="app.js"></script>
+</html>
